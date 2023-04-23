@@ -1,0 +1,30 @@
+package com.travel.web;
+
+import com.travel.model.entities.Hobby;
+import com.travel.service.HobbyService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+public class HomeController {
+    private final HobbyService hobbyService;
+
+    @Autowired
+    public HomeController(HobbyService hobbyService) {
+        this.hobbyService = hobbyService;
+    }
+
+    @GetMapping("/home")
+    @Operation(summary = "Show client/business homepage", security = @SecurityRequirement(name = "bearerAuth"))
+    public Set<Hobby> hobbiesShow(@RequestParam String username, @RequestParam String role) {
+        if (role.equals("user")) {
+            return this.hobbyService.getAllHobbieMatchesForClient(username);
+        }
+        return this.hobbyService.getAllHobbiesForBusiness(username);
+    }
+}

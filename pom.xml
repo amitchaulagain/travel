@@ -9,10 +9,10 @@
         <version>2.4.2</version>
         <relativePath/>
     </parent>
-    <groupId>backend.hobbiebackend</groupId>
-    <artifactId>hobbie-backend</artifactId>
+    <groupId>com.travel</groupId>
+    <artifactId>travel-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hobbie-backend</name>
+    <name>Travel App</name>
     <description>Project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -190,7 +190,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>backend.hobbiebackend.HobbieBackendApplication</mainClass>
+                    <mainClass>com.travel.Application</mainClass>
                 </configuration>
 
                 <executions>
