@@ -1,4 +1,4 @@
-package com.boot.rest.base.exception;
+package com.travel.exception;
 
 public class FileNotSupportedException extends RuntimeException {
 

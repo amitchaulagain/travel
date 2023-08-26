@@ -1,9 +1,9 @@
-package com.boot.rest.base.controller;
+package com.travel.web;
 
-import com.boot.rest.base.exception.FileNotSupportedException;
-import com.boot.rest.base.model.FileDetails;
-import com.boot.rest.base.payload.FileUploadResponse;
-import com.boot.rest.base.service.FileUploadService;
+import com.travel.exception.FileNotSupportedException;
+import com.travel.model.entities.FileDetails;
+import com.travel.payload.FileUploadResponse;
+import com.travel.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -22,10 +22,10 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "file")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FileUploadController {
 
-  @Autowired
+  //@Autowired
   private FileUploadService fileUploadService;
 
   @GetMapping

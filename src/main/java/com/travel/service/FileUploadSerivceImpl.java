@@ -1,9 +1,9 @@
-package com.boot.rest.base.service;
+package com.travel.service;
 
-import com.boot.rest.base.exception.FileNotSupportedException;
-import com.boot.rest.base.model.FileDetails;
-import com.boot.rest.base.payload.FileUploadResponse;
-import com.boot.rest.base.repository.FileDetailsRepository;
+import com.travel.exception.FileNotSupportedException;
+import com.travel.model.entities.FileDetails;
+import com.travel.model.repostiory.FileDetailsRepository;
+import com.travel.payload.FileUploadResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -23,12 +23,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@Service
+//@Service
 public class FileUploadSerivceImpl implements FileUploadService {
 
   public FileUploadSerivceImpl() throws IOException {}
 
-  @Autowired
+  //@Autowired
   private FileDetailsRepository fileDetailsRepository;
 
   private final Path UPLOAD_PATH =
@@ -39,8 +39,9 @@ public class FileUploadSerivceImpl implements FileUploadService {
   @Override
   public FileUploadResponse uploadFile(MultipartFile file,
                                        String uploaderName) throws IOException {
-    if (!Files.exists(UPLOAD_PATH)) {
-      Files.createDirectories(UPLOAD_PATH);
+      if (!Files.exists(UPLOAD_PATH)) {
+      Path path=Files.createDirectories(UPLOAD_PATH);
+      System.out.println(path.getFileName());
     }
 
     // file format validation

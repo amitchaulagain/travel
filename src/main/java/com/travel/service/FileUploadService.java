@@ -1,7 +1,7 @@
-package com.boot.rest.base.service;
+package com.travel.service;
 
-import com.boot.rest.base.model.FileDetails;
-import com.boot.rest.base.payload.FileUploadResponse;
+import com.travel.model.entities.FileDetails;
+import com.travel.payload.FileUploadResponse;
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 

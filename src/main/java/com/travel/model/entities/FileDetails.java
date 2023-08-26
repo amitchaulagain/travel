@@ -1,4 +1,4 @@
-package com.boot.rest.base.model;
+package com.travel.model.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
