@@ -2,13 +2,13 @@ version: "2"
 
 services:
   mysqldb:
-    image: mysql:8-oracle
+    image: amitchaulagain/my-mysql
 
     networks:
       - springmysql-net
     environment:
-      - MYSQL_ROOT_PASSWORD=1
-      - MYSQL_DATABASE=hobbie_backend_db
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=travel
 
   spring-backend:
     image: spring-backend
@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - spring.datasource.url=jdbc:mysql://mysqldb:3306/hobbie_backend_db?useSSL=false&serverTimezone=Europe/Paris
+      - DB_URL=jdbc:mysql://172.18.0.2:3306/travel?serverTimezone=UTC
     networks:
       - springmysql-net
     depends_on:

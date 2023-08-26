@@ -1,5 +1,12 @@
 FROM openjdk:11
-VOLUME /tmp
+#VOLUME /tmp
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
+
+#
+#FROM ubuntu
+#CMD ["echo", "Hello StackOverflows!"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+
