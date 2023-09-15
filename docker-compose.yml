@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_URL=jdbc:mysql://172.18.0.2:3306/travel?serverTimezone=UTC
+      - DB_URL=jdbc:mysql://mysqldb:3306/travel?serverTimezone=UTC
     networks:
       - springmysql-net
     depends_on:
